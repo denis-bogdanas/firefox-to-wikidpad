@@ -18,10 +18,10 @@ java -cp "src;lib/*" Main
 -pageSizeThreshold <number>
 ```
 
-- compactBookmarks meaning: 
-  - true = bookmarks a la [name|link]
-  - false = boolmarks a la name: link
-- pageSizeThreshold meaning: The maximal number of elements (links and directories) a page may contain. if a page has less than pageSizeThreshold elements, all its elements will be recursively included into this page. Set to 1 to have one page for each directory. Set to a large value, like 10000, to generate the whole wiki in one page.
+    - compactBookmarks meaning: 
+        - true = bookmarks a la [name|link]
+        - false = boolmarks a la name: link
+    - pageSizeThreshold meaning: The maximal number of elements (links and directories) a page may contain. if a page has less than pageSizeThreshold elements, all its elements will be recursively included into this page. Set to 1 to have one page for each directory. Set to a large value, like 10000, to generate the whole wiki in one page.
 
 8. Go back to wikidpad. Notice the main page has changed.
 9. Main menu -> Wiki -> Maintenance -> Rebuild wiki. Now the main menu should contain all the pages.
