@@ -9,7 +9,8 @@ javac -cp src src/Main.java
 - Open Wikidpad
 - Create a fresh wiki. Choose original sqlite as database backend.
 - Find firefox profile directory: https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data
-- Run bookmarks importer. The importer requires 8 arguments, always in he same order:
+- Run bookmarks importer. The importer requires 8 arguments, always in the same order. The whole command should be 
+on one line, executed from the root directory of the project. 
 ```
 java -cp "src;lib/*" Main
 -in <path to places.sqlite inside firefox profile dir>
@@ -20,13 +21,13 @@ java -cp "src;lib/*" Main
 
   * compactBookmarks meaning: 
       * true = bookmarks a la [name|link]
-      * false = boolmarks a la name: link
+      * false = bookmarks a la name: link
   * pageSizeThreshold meaning: The maximal number of elements (links and directories) a page may contain. 
   If a page has less than pageSizeThreshold elements, all its elements will be recursively included into 
   this page. Set to 1 to have one page for each directory. 
   Set to a large value, like 10000, to generate the whole wiki in one page.
 
-- Go back to wikidpad. Notice the main page has changed.
+- Go back to Wikidpad. Notice the main page has changed.
 - Main menu -> Wiki -> Maintenance -> Rebuild wiki. Now the main menu should contain all the pages.
 - Optional: disable CamelCase wiki words. If you don't, Wikidpad will create a lot of phantom pages, for words like YouTube.
       In WikiSettings page add the line:      

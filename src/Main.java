@@ -76,10 +76,27 @@ public class Main {
      *             Set to a large value, like 10000, to generate the whole wiki in one page.
      */
     private static void parseArgs(String[] args) {
-        sqliteFile = args[1];
-        wikiDir = args[3];
-        compactBookmarks = Boolean.parseBoolean(args[5]);
-        pageSizeThreshold = Integer.parseInt(args[7]);
+        if (args.length != 8) {
+            System.err.println("Error! Expected 8 arguments, got " + args.length + ". Command-line arguments:\n");
+            for (String arg : args) {
+                System.err.println(arg);
+            }
+            System.exit(1);
+        }
+        try {
+            sqliteFile = args[1];
+            wikiDir = args[3];
+            compactBookmarks = Boolean.parseBoolean(args[5]);
+            pageSizeThreshold = Integer.parseInt(args[7]);
+        } catch (RuntimeException e) {
+            System.err.println("An exception occurred. Command-line arguments:\n");
+            for (String arg : args) {
+                System.err.println(arg);
+            }
+            System.err.println();
+            e.printStackTrace();
+            System.exit(1);
+        }
     }
 
     /**
